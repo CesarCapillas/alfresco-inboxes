@@ -28,6 +28,7 @@ define([
 
         previewUrl: "",
         downloadUrl: "",
+        shareUrl: "",
         escapedLine1: "",
         escapedLine2: "",
         escapedLine3: "",
@@ -37,6 +38,7 @@ define([
         approveLabel: "approve",
         rejectLabel: "reject",
         downloadLabel: "download",
+        shareLabel: "share",
 
         postMixInProperties: function () {
             this.composeLines();
@@ -59,6 +61,13 @@ define([
                     }
                 );
             }
+            ///share/page/site/swsdp
+            this.shareUrl = lang.replace(
+                "/share/page/document-details?nodeRef=workspace://SpacesStore/{entryId}",
+                {
+                    entryId: this.entry.id
+                }
+            );
             this.downloadUrl = lang.replace(
                 "{proxyUri}api/node/content/workspace/SpacesStore/{entryId}/{filename}?a=true",
                 {
@@ -101,6 +110,8 @@ define([
             if (!this.escapedTag) {
                 this.escapedTag = "";
             }
+
+            this.shareLabel = this.message("share.label");
 
             this.downloadLabel = this.message(
                 "download.size",

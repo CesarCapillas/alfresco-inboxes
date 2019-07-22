@@ -2,6 +2,7 @@
     <div class="inbox-item-icon"><img src="${previewUrl}"></div>
     <div class="inbox-item-description">
         <div class="inboxes-item-line1">
+<!--
             <div class="inboxes-item-float-right inboxes-item-show-on-hover">
                 <button class="inboxes-item-button inboxes-item-button-approve"
                         data-dojo-attach-event="click:approveAction">${approveLabel}
@@ -10,6 +11,7 @@
                         data-dojo-attach-event="click:rejectAction">${rejectLabel}
                 </button>
             </div>
+-->
             <h2>
                 ${escapedLine1}
                 <span class="inboxes-item-tag">${escapedTag}</span>
@@ -21,6 +23,10 @@
         <div class="inboxes-item-line3">
             <div class="inboxes-item-float-right inboxes-item-show-on-hover">
                 <a class="download-link" href="${downloadUrl}">${downloadLabel}</a>
+            </div>
+ 
+            <div class="inboxes-item-float-right inboxes-item-show-on-hover">
+                <a class="share-link" href="${shareUrl}">${shareLabel}</a>
             </div>
             ${escapedLine3}
         </div>
